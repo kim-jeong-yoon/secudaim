@@ -1,0 +1,15 @@
+
+if (isValidFile && file.size > this.maxFileSizeInBytes) {
+  this.tooltipService.show(`파일 용량은 ${this.maxFileSizeInBytes / 1000}KB를 초과할 수 없습니다`)
+  isValidFile = false
+}
+
+{
+  get maxFileSizeKB (): number {
+    return Math.floor(this.maxFileSizeInBytes / 1000)
+  }
+
+  get currentFileSizeKB (): number {
+    return Math.floor(this.currentFileSize / 1000)
+  }
+}
